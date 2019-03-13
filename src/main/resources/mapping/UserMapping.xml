@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.daina.mapper.UserMapper">
+    <resultMap id="BaseResultMap" type="com.example.daina.entity.User">
+        <id column="user_id" jdbcType="VARCHAR" property="userId"/>
+        <result column="unit_id" jdbcType="VARCHAR" property="unitId" />
+        <result column="user_name" jdbcType="VARCHAR" property="userName" />
+        <result column="login_name" jdbcType="VARCHAR" property="loginName" />
+        <result column="login_pwd" jdbcType="VARCHAR" property="loginPwd"/>
+        <result column="phone" jdbcType="VARCHAR" property="phone" />
+        <result column="is_sysAdmin" jdbcType="INTEGER" property="isAdmin" />
+        <result column="del_flag" jdbcType="INTEGER" property="delFlag" />
+    </resultMap>
+
+    <select id="login" resultMap="BaseResultMap">
+        SELECT * FROM sys_user WHERE
+        login_name=#{loginName} and login_pwd=#{loginPwd}
+    </select>
+
+</mapper>
