@@ -16,5 +16,12 @@
         SELECT * FROM sys_user WHERE
         login_name=#{loginName} and login_pwd=#{loginPwd}
     </select>
-
+    <select id="findUserByLoginName" resultMap="BaseResultMap">
+        SELECT * FROM sys_user WHERE
+        login_name=#{loginName}
+    </select>
+    <select id="findUserByUserId" resultMap="BaseResultMap">
+        SELECT * FROM sys_user WHERE
+        user_id=#{userId}
+    </select>
 </mapper>

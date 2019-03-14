@@ -33,4 +33,10 @@ public class UserService {
         }
         return map;
     }
+    public User findUserByLoginName(String loginName) {
+        return userMapper.findUserByLoginName(loginName);
+    }
+    public User findUserById(String userId) {
+        return userMapper.findUserByUserId(userId);
+    }
 }
