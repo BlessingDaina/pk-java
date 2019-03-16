@@ -1,9 +1,7 @@
 package com.example.daina.service;
 
 import com.example.daina.entity.Menu;
-import com.example.daina.entity.Site;
 import com.example.daina.mapper.MenuMapper;
-import com.example.daina.mapper.SiteMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,16 +10,14 @@ import java.util.List;
 /**
  * @author: Daina
  * @description:
- * @date: Created in 14:34 2019/3/13
+ * @date: Created in 14:14 2019/3/14
  */
 @Service
-public class SiteService {
-
+public class MenuService {
     @Autowired
-    SiteMapper siteMapper;
+    MenuMapper menuMapper;
 
-    public List<Site> getSites() {
-        List<Site> list = siteMapper.getSites();
-        return list;
+    public List<Menu> getMenuParentBySiteId(String siteId) {
+        return menuMapper.getMenuParentBySiteId(siteId);
     }
 }
